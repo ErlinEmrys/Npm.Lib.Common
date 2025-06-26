@@ -1,0 +1,38 @@
+{
+	"name": "@erlinemrys/lib.common",
+	"type": "module",
+	"version": "0.0.1",
+	"description": "A one`s man basic common library for JS/TS",
+	"author": "Erlin Emrys",
+	"license": "MIT",
+	"repository":
+	{
+		"type": "git",
+		"url": "https://github.com/ErlinEmrys/Npm.Lib.Common.git"
+	},
+	"keywords":
+	[
+		"javascript",
+		"typescript",
+		"common",
+		"lib",
+		"library"
+	],
+	"main": "./dist/Index.js",
+	"types": "./dist/Index.d.ts",
+	"files": [ "dist" ],
+	"scripts":
+	{
+		"build": "tsc",
+		"lint": "eslint .",
+		"format": "eslint . --fix"
+	},
+	"dependencies":
+	{
+	},
+	"devDependencies":
+	{
+		"@erlinemrys/eslint-config": "0.0.4",
+		"eslint": "9.29.0"
+	}
+}
