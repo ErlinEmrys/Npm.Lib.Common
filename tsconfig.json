@@ -10,5 +10,9 @@
 		"esModuleInterop": true,
 		"skipLibCheck": true
 	},
-	"include": [ "**/*.ts" ]
+	"include": [ "**/*.ts" ],
+	"tsc-alias":
+	{
+		"resolveFullPaths": true
+	}
 }
