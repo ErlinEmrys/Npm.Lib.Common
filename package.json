@@ -25,7 +25,8 @@
 	{
 		"build": "rimraf dist && tsc && tsc-alias",
 		"lint": "eslint .",
-		"format": "eslint . --fix"
+		"format": "eslint . --fix",
+		"publish": "pnpm lint && pnpm build && pnpm publish --access=public"
 	},
 	"dependencies":
 	{
