@@ -30,7 +30,7 @@ export class ConsoleLogger implements ILog
 
 	SubstituteConsole( callback: ( message: string, ...data: any[] ) => void )
 	{
-		return ( data: any[] ) =>
+		return ( ...data: any[] ) =>
 		{
 			callback( "External code:", ...data );
 		};

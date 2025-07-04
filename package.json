@@ -1,7 +1,7 @@
 {
 	"name": "@erlinemrys/lib.common",
 	"type": "module",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "A one`s man basic common library for JS/TS",
 	"author": "Erlin Emrys",
 	"license": "MIT",
