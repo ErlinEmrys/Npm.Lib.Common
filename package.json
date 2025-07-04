@@ -1,7 +1,7 @@
 {
 	"name": "@erlinemrys/lib.common",
 	"type": "module",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "A one`s man basic common library for JS/TS",
 	"author": "Erlin Emrys",
 	"license": "MIT",
@@ -26,7 +26,7 @@
 		"build": "rimraf dist && tsc && tsc-alias",
 		"lint": "eslint .",
 		"format": "eslint . --fix",
-		"publish": "pnpm lint && pnpm build && pnpm publish --access=public"
+		"pub": "pnpm lint && pnpm build && pnpm publish --access=public"
 	},
 	"dependencies":
 	{
