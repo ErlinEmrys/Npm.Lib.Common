@@ -1,4 +1,5 @@
 import type { ILog, ILogSink } from "./Log";
+import { LogLevel } from "./Log";
 
 export class LogSink implements ILogSink
 {
@@ -27,43 +28,76 @@ export class LogSink implements ILogSink
 		};
 	};
 
-	Err = ( message: string, ...data: any[] ) =>
+	Any = ( severity: LogLevel, message: string, ...data: any[] ) =>
 	{
 		this.ForeachLogs( ( fLog ) =>
 		{
-			fLog.Err( message, ...data );
+			try
+			{
+				switch( severity )
+				{
+					case LogLevel.Fatal:
+						fLog.Fatal( message, ...data );
+						break;
+					case LogLevel.Error:
+						fLog.Err( message, ...data );
+						break;
+					case LogLevel.Warning:
+						fLog.Wrn( message, ...data );
+						break;
+					case LogLevel.Info:
+						fLog.Inf( message, ...data );
+						break;
+					case LogLevel.Debug:
+						fLog.Dbg( message, ...data );
+						break;
+					case LogLevel.Trace:
+						fLog.Trc( message, ...data );
+						break;
+					case LogLevel.NotSpecified:
+						fLog.Log( message, ...data );
+						break;
+				}
+			}
+			catch
+			{
+				// Error during logging - skip log implementation
+			}
 		} );
+	};
+
+	Fatal = ( message: string, ...data: any[] ) =>
+	{
+		this.Any( LogLevel.Fatal, message, ...data );
+	};
+
+	Err = ( message: string, ...data: any[] ) =>
+	{
+		this.Any( LogLevel.Error, message, ...data );
 	};
 
 	Wrn = ( message: string, ...data: any[] ) =>
 	{
-		this.ForeachLogs( ( fLog ) =>
-		{
-			fLog.Wrn( message, ...data );
-		} );
-	};
-
-	Log = ( message: string, ...data: any[] ) =>
-	{
-		this.ForeachLogs( ( fLog ) =>
-		{
-			fLog.Log( message, ...data );
-		} );
+		this.Any( LogLevel.Warning, message, ...data );
 	};
 
 	Inf = ( message: string, ...data: any[] ) =>
 	{
-		this.ForeachLogs( ( fLog ) =>
-		{
-			fLog.Inf( message, ...data );
-		} );
+		this.Any( LogLevel.Info, message, ...data );
 	};
 
 	Dbg = ( message: string, ...data: any[] ) =>
 	{
-		this.ForeachLogs( ( fLog ) =>
-		{
-			fLog.Dbg( message, ...data );
-		} );
+		this.Any( LogLevel.Debug, message, ...data );
+	};
+
+	Trc = ( message: string, ...data: any[] ) =>
+	{
+		this.Any( LogLevel.Trace, message, ...data );
+	};
+
+	Log = ( message: string, ...data: any[] ) =>
+	{
+		this.Any( LogLevel.NotSpecified, message, ...data );
 	};
 }

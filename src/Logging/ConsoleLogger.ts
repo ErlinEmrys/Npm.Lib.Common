@@ -36,6 +36,11 @@ export class ConsoleLogger implements ILog
 		};
 	}
 
+	Fatal( message: string, ...data: any[] )
+	{
+		this.Err( message, ...data );
+	}
+
 	Err( message: string, ...data: any[] )
 	{
 		this._origErr( `%c${ message }`, "background-color: transparent; padding: 1px;", ...data );
@@ -59,5 +64,10 @@ export class ConsoleLogger implements ILog
 	Dbg( message: string, ...data: any[] )
 	{
 		this._origDbg( `%c${ message }`, "background-color: #6da0cd; color: black; padding: 1px;", ...data );
+	}
+
+	Trc( message: string, ...data: any[] )
+	{
+		this.Dbg( message, ...data );
 	}
 }
