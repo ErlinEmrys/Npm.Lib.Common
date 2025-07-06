@@ -11,7 +11,7 @@ export class TimeEnricher implements ILogEnricher
 
 	Enrich = ( severity: LogLevel, message: string, ...data: any[] ) =>
 	{
-		const msg = `[${ new Date().toLocaleTimeString( "en-US", this._formattingOptions ) }]: ${ message }`;
+		const msg = `[${ new Date().toLocaleTimeString( "en-US", this._formattingOptions ) }]${ message }`;
 		return [ severity, msg, ...data ];
 	};
 }
