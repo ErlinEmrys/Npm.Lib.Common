@@ -4,6 +4,8 @@ import type { ILog } from "./Log";
 
 export class NullLogger implements ILog
 {
+	public static Instance: NullLogger = new NullLogger();
+
 	Fatal( message: string, ...data: any[] )
 	{
 	}
