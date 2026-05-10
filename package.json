@@ -1,7 +1,7 @@
 {
 	"name": "@erlinemrys/lib.common",
 	"type": "module",
-	"version": "0.0.13",
+	"version": "0.0.12",
 	"description": "A one`s man basic common library for JS/TS",
 	"author": "Erlin Emrys",
 	"license": "MIT",
@@ -37,7 +37,7 @@
 	},
 	"devDependencies":
 	{
-		"@erlinemrys/eslint-config": "0.0.9",
+		"@erlinemrys/eslint-config": "0.0.4",
 		"eslint": "9.29.0",
 		"rimraf": "6.0.1",
 		"tsc-alias": "1.8.16"
