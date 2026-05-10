@@ -1,5 +1,7 @@
 // noinspection JSUnusedGlobalSymbols
 
+export { ValidationHelper } from "./Helpers/ValidationHelper";
+export { ILicenseData, ILicensePackage, LicenseDataType } from "./Licenses/License";
 export { ConsoleLogger } from "./Logging/ConsoleLogger";
 export type { ILog, ILogEnricher, ILogSink } from "./Logging/Log";
 export { Log, LogLevel } from "./Logging/Log";
